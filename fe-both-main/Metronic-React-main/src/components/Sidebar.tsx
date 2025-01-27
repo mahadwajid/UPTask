@@ -1,9 +1,28 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 interface SidebarProps {
   leftNav: string;
   setLeftNav: React.Dispatch<React.SetStateAction<string>>; // Function to update leftNav
 }
 function Sidebar({ leftNav, setLeftNav }: SidebarProps) {
+  const navigate = useNavigate(); // Initialize navigate function
+
+  const handleNodeClick = () => {
+    setLeftNav("nodes");
+    navigate("/ViewNodes"); // Navigate to ViewNodes page
+  };
+
+  const handleclick2 = () =>{
+    setLeftNav("dashboard");
+    navigate("/");
+  }
+
+  const handleModalClick = () =>{
+    setLeftNav("ViewModals");
+    navigate("/ViewModals");
+  }
+
   return (
     <div
       className="sidebar dark:bg-coal-600 bg-light border-r border-r-gray-200 dark:border-r-coal-100 fixed top-0 bottom-0 z-20 hidden lg:flex flex-col items-stretch shrink-0"
@@ -71,7 +90,7 @@ function Sidebar({ leftNav, setLeftNav }: SidebarProps) {
               className={`menu-item ${leftNav === "dashboard" ? "active" : ""}`}
               data-menu-item-toggle="accordion"
               data-menu-item-trigger="click"
-              onClick={() => setLeftNav("dashboard")}
+              onClick={handleclick2}
             >
               <div
                 className="menu-link flex items-center grow cursor-pointer border border-transparent gap-[10px] pl-[10px] pr-[10px] py-[6px]"
@@ -115,6 +134,49 @@ function Sidebar({ leftNav, setLeftNav }: SidebarProps) {
                 </div>
               </div> */}
             </div>
+
+            <div
+              className={`menu-item ${leftNav === "nodes" ? "active" : ""}`}
+              data-menu-item-toggle="accordion"
+              data-menu-item-trigger="click"
+              onClick={handleNodeClick}
+            >
+              <div
+                className="menu-link flex items-center grow cursor-pointer border border-transparent gap-[10px] pl-[10px] pr-[10px] py-[6px]"
+                tabIndex={0}
+              >
+                <span className="menu-icon items-start text-gray-500 dark:text-gray-400 w-[20px]">
+                  <i className="ki-filled ki-server text-lg"></i> {/* Replace with appropriate icon */}
+                </span>
+                <span className="menu-title text-sm font-semibold text-gray-700 menu-item-active:text-primary menu-link-hover:!text-primary">
+                  Nodes
+                </span>
+              </div>
+            </div>
+
+
+            <div
+              className={`menu-item ${leftNav === "modals" ? "active" : ""}`}
+              data-menu-item-toggle="accordion"
+              data-menu-item-trigger="click"
+              onClick={handleModalClick}
+            >
+              <div
+                className="menu-link flex items-center grow cursor-pointer border border-transparent gap-[10px] pl-[10px] pr-[10px] py-[6px]"
+                tabIndex={0}
+              >
+                <span className="menu-icon items-start text-gray-500 dark:text-gray-400 w-[20px]">
+                  <i className="ki-filled ki-server text-lg"></i> {/* Replace with appropriate icon */}
+                </span>
+                <span className="menu-title text-sm font-semibold text-gray-700 menu-item-active:text-primary menu-link-hover:!text-primary">
+                  Modals
+                </span>
+              </div>
+            </div>
+
+        
+
+
             <div className="menu-item pt-2.25 pb-px">
               <span className="menu-heading italic uppercase pl-[10px] pr-[10px] text-2sm font-semibold text-gray-500">
                 Artificial Intelligence

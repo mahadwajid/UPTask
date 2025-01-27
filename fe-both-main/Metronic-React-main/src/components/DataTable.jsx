@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { KTDataTable } from "../metronic/core";
+import { KTDataTable } from "../metronic-tailwind-html/src/core";
 
 const DataTable = () => {
   const apiUrl = "https://fast-api-server-livid.vercel.app/data";

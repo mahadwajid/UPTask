@@ -1,5 +1,77 @@
+import plugin from './src/metronic-tailwind-html/src/core/plugins/plugin';
+import theme from './src/metronic-tailwind-html/src/core/plugins/components/theme';
+import breakpoints from './src/metronic-tailwind-html/src/core/plugins/components/breakpoints';
+import typography from './src/metronic-tailwind-html/src/core/plugins/components/typography';
+import menu from './src/metronic-tailwind-html/src/core/plugins/components/menu';
+import dropdown from './src/metronic-tailwind-html/src/core/plugins/components/dropdown';
+import accordion from './src/metronic-tailwind-html/src/core/plugins/components/accordion';
+import input from './src/metronic-tailwind-html/src/core/plugins/components/input';
+import inputGroup from './src/metronic-tailwind-html/src/core/plugins/components/input-group';
+import select from './src/metronic-tailwind-html/src/core/plugins/components/select';
+import textarea from './src/metronic-tailwind-html/src/core/plugins/components/textarea';
+import fileInput from './src/metronic-tailwind-html/src/core/plugins/components/file-input';
+import switchComponent from './src/metronic-tailwind-html/src/core/plugins/components/switch';
+import checkbox from './src/metronic-tailwind-html/src/core/plugins/components/checkbox';
+import radio from './src/metronic-tailwind-html/src/core/plugins/components/radio';
+import range from './src/metronic-tailwind-html/src/core/plugins/components/range';
+import container from './src/metronic-tailwind-html/src/core/plugins/components/container';
+import imageInput from './src/metronic-tailwind-html/src/core/plugins/components/image-input';
+import modal from './src/metronic-tailwind-html/src/core/plugins/components/modal';
+import drawer from './src/metronic-tailwind-html/src/core/plugins/components/drawer';
+import tooltip from './src/metronic-tailwind-html/src/core/plugins/components/tooltip';
+import popover from './src/metronic-tailwind-html/src/core/plugins/components/popover';
+import btn from './src/metronic-tailwind-html/src/core/plugins/components/btn';
+import btnGroup from './src/metronic-tailwind-html/src/core/plugins/components/btn-group';
+import tabs from './src/metronic-tailwind-html/src/core/plugins/components/tabs';
+import pagination from './src/metronic-tailwind-html/src/core/plugins/components/pagination';
+import card from './src/metronic-tailwind-html/src/core/plugins/components/card';
+import table from './src/metronic-tailwind-html/src/core/plugins/components/table';
+import badge from './src/metronic-tailwind-html/src/core/plugins/components/badge';
+import rating from './src/metronic-tailwind-html/src/core/plugins/components/rating';
+import scrollable from './src/metronic-tailwind-html/src/core/plugins/components/scrollable';
+import progress from './src/metronic-tailwind-html/src/core/plugins/components/progress';
+import apexcharts from './src/metronic-tailwind-html/src/core/plugins/components/apexcharts';
+import leaflet from './src/metronic-tailwind-html/src/core/plugins/components/leaflet';
+
+
 /** @type {import('tailwindcss').Config} */
 export default {
+	plugins: [
+		plugin,
+		theme,
+		breakpoints,
+		typography,
+		menu,
+		dropdown,
+		accordion,
+		input,
+		inputGroup,
+		select,
+		textarea,
+		fileInput,
+		switchComponent,
+		checkbox,
+		radio,
+		range,
+		container,
+		imageInput,
+		modal,
+		drawer,
+		tooltip,
+		popover,
+		btn,
+		btnGroup,
+		tabs,
+		pagination,
+		card,
+		table,
+		badge,
+		rating,
+		scrollable,
+		progress,
+		apexcharts,
+		leaflet
+	  ],
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -598,40 +670,41 @@ export default {
 		})
 	},
 	plugins: [
-		require('./src/metronic/core/plugins/plugin'),
-		require('./src/metronic/core/plugins/components/theme'),
-		require('./src/metronic/core/plugins/components/breakpoints'),
-		require('./src/metronic/core/plugins/components/typography'),
-		require('./src/metronic/core/plugins/components/menu'),
-		require('./src/metronic/core/plugins/components/dropdown'),
-		require('./src/metronic/core/plugins/components/accordion'),
-		require('./src/metronic/core/plugins/components/input'),
-		require('./src/metronic/core/plugins/components/input-group'),
-		require('./src/metronic/core/plugins/components/select'),
-		require('./src/metronic/core/plugins/components/textarea'),
-		require('./src/metronic/core/plugins/components/file-input'),
-		require('./src/metronic/core/plugins/components/switch'),
-		require('./src/metronic/core/plugins/components/checkbox'),
-		require('./src/metronic/core/plugins/components/radio'),
-		require('./src/metronic/core/plugins/components/range'),
-		require('./src/metronic/core/plugins/components/container'),
-		require('./src/metronic/core/plugins/components/image-input'),
-		require('./src/metronic/core/plugins/components/modal'),
-		require('./src/metronic/core/plugins/components/drawer'),
-		require('./src/metronic/core/plugins/components/tooltip'),
-		require('./src/metronic/core/plugins/components/popover'),
-		require('./src/metronic/core/plugins/components/btn'),
-		require('./src/metronic/core/plugins/components/btn-group'),
-		require('./src/metronic/core/plugins/components/tabs'),
-		require('./src/metronic/core/plugins/components/pagination'),
-		require('./src/metronic/core/plugins/components/card'),
-		require('./src/metronic/core/plugins/components/table'),
-		require('./src/metronic/core/plugins/components/badge'),
-		require('./src/metronic/core/plugins/components/rating'),
-		require('./src/metronic/core/plugins/components/scrollable'),
-		require('./src/metronic/core/plugins/components/progress'),
-		require('./src/metronic/core/plugins/components/apexcharts'),
-		require('./src/metronic/core/plugins/components/leaflet')
+		require('./src/metronic-tailwind-html/src/core/plugins/plugin'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/theme'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/breakpoints'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/typography'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/menu'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/dropdown'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/accordion'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/input'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/input-group'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/select'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/textarea'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/file-input'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/switch'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/checkbox'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/radio'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/range'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/container'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/image-input'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/modal'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/drawer'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/tooltip'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/popover'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/btn'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/btn-group'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/tabs'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/pagination'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/card'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/table'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/badge'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/rating'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/scrollable'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/progress'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/apexcharts'),
+		require('./src/metronic-tailwind-html/src/core/plugins/components/leaflet'),
 	]
+	
 }
 

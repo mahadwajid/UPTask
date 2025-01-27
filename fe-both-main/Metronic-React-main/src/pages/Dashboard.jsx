@@ -1,9 +1,9 @@
 import Sidebar from "../components/Sidebar.tsx";
 import Footer from "../components/Footer.tsx";
 import Header from "../components/Header.tsx";
-import KTComponent from "../metronic/core/index.ts";
+import KTComponent from "../metronic-tailwind-html/src/core/index.ts";
 import { useEffect, useState } from "react";
-import KTLayout from "../metronic/app/layouts/demo1.js";
+import KTLayout from "../metronic-tailwind-html/src/app/layouts/demo1.js";
 import SearchModal from "../components/SearchModal.tsx";
 import DataTable from "../components/DataTable.jsx";
 import WithAuth from "../components/WithAuth.jsx";
