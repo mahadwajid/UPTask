@@ -12,7 +12,7 @@ const ViewModels = () => {
 
   useEffect(() => {
     // Fetch models from the API
-    fetch("/api/models") // Replace with your actual API endpoint
+    fetch("http://localhost:8080/api/models") // Replace with your actual API endpoint
       .then((response) => response.json())
       .then((data) => setModels(data))
       .catch((error) => console.error("Error fetching models:", error));

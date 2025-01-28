@@ -13,7 +13,7 @@ const ViewNodes = () => {
   const [nodes, setNodes] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [newNode, setNewNode] = useState({ fqdn: "", rpcPort: "" });
-  const apiUrl = "https://your-api-endpoint-here.com/nodes"; // Replace with your API endpoint
+  const apiUrl = "http://localhost:8080/api/nodes"; // Replace with your API endpoint
 
   useEffect(() => {
     KTComponent.init();
@@ -51,6 +51,7 @@ const ViewNodes = () => {
       const response = await fetch(apiUrl, {
         method: "POST",
         headers: {
+          'Authorization': 'Basic ' + btoa('admin:dXNlcm5hbWU6cGFzc3dvcmQ'),
           "Content-Type": "application/json",
         },
         body: JSON.stringify(newNode),

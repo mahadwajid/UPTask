@@ -5,15 +5,12 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Model {
+public class DataBlock {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
-    private String hashWB;
-
-    // @ManyToOne
-    // @JoinColumn(name = "node_id", nullable = false)
-    // private Node node;
+    private String fileURL;
+    private String hashDB;
 }
