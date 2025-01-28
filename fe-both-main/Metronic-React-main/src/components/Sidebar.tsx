@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 interface SidebarProps {
   leftNav: string;
@@ -145,8 +146,8 @@ function Sidebar({ leftNav, setLeftNav }: SidebarProps) {
                 className="menu-link flex items-center grow cursor-pointer border border-transparent gap-[10px] pl-[10px] pr-[10px] py-[6px]"
                 tabIndex={0}
               >
-                <span className="menu-icon items-start text-gray-500 dark:text-gray-400 w-[20px]">
-                  <i className="ki-filled ki-server text-lg"></i> {/* Replace with appropriate icon */}
+               <span className="menu-icon items-start text-gray-500 dark:text-gray-400 w-[20px]">
+                  <i className="ki-filled ki-duotone ki-data text-lg"></i>
                 </span>
                 <span className="menu-title text-sm font-semibold text-gray-700 menu-item-active:text-primary menu-link-hover:!text-primary">
                   Nodes
@@ -165,8 +166,8 @@ function Sidebar({ leftNav, setLeftNav }: SidebarProps) {
                 className="menu-link flex items-center grow cursor-pointer border border-transparent gap-[10px] pl-[10px] pr-[10px] py-[6px]"
                 tabIndex={0}
               >
-                <span className="menu-icon items-start text-gray-500 dark:text-gray-400 w-[20px]">
-                  <i className="ki-filled ki-server text-lg"></i> {/* Replace with appropriate icon */}
+              <span className="menu-icon items-start text-gray-500 dark:text-gray-400 w-[20px]">
+                  <i className="ki-filled ki-duotone ki-note text-lg"></i>
                 </span>
                 <span className="menu-title text-sm font-semibold text-gray-700 menu-item-active:text-primary menu-link-hover:!text-primary">
                   Modals

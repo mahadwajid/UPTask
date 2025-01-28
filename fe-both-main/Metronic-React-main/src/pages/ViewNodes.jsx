@@ -1,8 +1,8 @@
+import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar.tsx";
 import Footer from "../components/Footer.tsx";
 import Header from "../components/Header.tsx";
 import KTComponent from "../metronic-tailwind-html/src/core/index.ts";
-import { useEffect, useState } from "react";
 import KTLayout from "../metronic-tailwind-html/src/app/layouts/demo1.js";
 import SearchModal from "../components/SearchModal.tsx";
 import DataTable from "../components/DataTable.jsx";
@@ -11,6 +11,8 @@ import WithAuth from "../components/WithAuth.jsx";
 const ViewNodes = () => {
   const [leftNav, setLeftNav] = useState("nodes");
   const [nodes, setNodes] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [newNode, setNewNode] = useState({ fqdn: "", rpcPort: "" });
   const apiUrl = "https://your-api-endpoint-here.com/nodes"; // Replace with your API endpoint
 
   useEffect(() => {
@@ -44,6 +46,28 @@ const ViewNodes = () => {
     }
   };
 
+  const handleAddNode = async () => {
+    try {
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newNode),
+      });
+      if (response.ok) {
+        const addedNode = await response.json();
+        setNodes((prevNodes) => [...prevNodes, addedNode]);
+        setShowModal(false);
+        setNewNode({ fqdn: "", rpcPort: "" });
+      } else {
+        console.error("Failed to add node:", await response.text());
+      }
+    } catch (error) {
+      console.error("Error adding node:", error);
+    }
+  };
+
   return (
     <>
       <div className="flex grow">
@@ -57,7 +81,10 @@ const ViewNodes = () => {
                 <div className="card bg-white shadow-md rounded-lg p-6">
                   <div className="flex justify-between items-center mb-4">
                     <h3 className="text-xl font-semibold text-gray-800">Modelex Nodes</h3>
-                    <button className="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700">
+                    <button
+                      onClick={() => setShowModal(true)}
+                      className="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700"
+                    >
                       Add Node
                     </button>
                   </div>
@@ -100,6 +127,53 @@ const ViewNodes = () => {
           <Footer />
         </div>
       </div>
+
+      {showModal && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white rounded-lg shadow-lg p-6 w-96">
+            <h2 className="text-lg font-semibold mb-4">Add Node</h2>
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                FQDN
+              </label>
+              <input
+                type="text"
+                value={newNode.fqdn}
+                onChange={(e) => setNewNode({ ...newNode, fqdn: e.target.value })}
+                className="w-full border rounded-lg px-3 py-2"
+              />
+            </div>
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                RPC Port
+              </label>
+              <input
+                type="text"
+                value={newNode.rpcPort}
+                onChange={(e) =>
+                  setNewNode({ ...newNode, rpcPort: e.target.value })
+                }
+                className="w-full border rounded-lg px-3 py-2"
+              />
+            </div>
+            <div className="flex justify-end">
+              <button
+                onClick={() => setShowModal(false)}
+                className="bg-gray-300 text-gray-700 px-4 py-2 rounded-lg mr-2"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleAddNode}
+                className="bg-blue-600 text-white px-4 py-2 rounded-lg"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       <SearchModal />
     </>
   );
