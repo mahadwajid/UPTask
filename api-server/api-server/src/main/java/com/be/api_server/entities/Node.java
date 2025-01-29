@@ -2,6 +2,7 @@ package com.be.api_server.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.util.List;
 
 @Entity
@@ -12,15 +13,14 @@ public class Node {
     private Long id;
 
     private String name;
+    private String fqdn;
     private String publicKey;
     private String ethereumAddress;
     private int p2pPort;
     private int rpcPort;
     private boolean registered;
 
-    @OneToMany(mappedBy = "node", cascade = CascadeType.ALL)
-    private List<NodeModel> models;
-
-    @OneToMany(mappedBy = "node", cascade = CascadeType.ALL)
-    private List<NodeDataBlock> dataBlocks;
+    @OneToMany(mappedBy = "node", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference
+    private List<Model> models;
 }
