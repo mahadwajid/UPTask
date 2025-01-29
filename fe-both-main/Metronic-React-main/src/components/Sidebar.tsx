@@ -40,7 +40,7 @@ function Sidebar({ leftNav, setLeftNav }: SidebarProps) {
           <img
             className="default-logo min-h-[22px]"
             // src="/media/app/default-logo.svg"
-            src="/media/logo/modelex.png"
+            src="/Logos/modelex.png"
           />
           <img
             className="small-logo min-h-[22px]"

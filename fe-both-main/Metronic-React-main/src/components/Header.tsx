@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+
+
 interface SidebarProps {
   leftNav: string;
   setLeftNav: React.Dispatch<React.SetStateAction<string>>; // Function to update leftNav
@@ -20,10 +22,8 @@ function Header({ leftNav }: SidebarProps) {
       >
         <div className="flex gap-1 lg:hidden items-center -ml-1">
           <a className="shrink-0" href="html/demo1.html">
-            <img
-              className="max-h-[25px] w-full"
-              src="/media/app/mini-logo.svg"
-            />
+          <img className="max-h-[25px] w-full" src="/Logos/modelex.png" alt="Logo" />
+
           </a>
           <div className="flex items-center">
             <button
